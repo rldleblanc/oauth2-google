@@ -72,6 +72,12 @@ class GoogleTest extends \PHPUnit_Framework_TestCase
 
     }
 
+    public function testUserFields()
+    {
+        $this->provider->setUserFields(['gender',]);
+        $this->assertEquals(['gender'], $this->provider->getUserFields());
+    }
+
     public function testResourceOwnerDetailsUrlCustomFields()
     {
         $provider = new GoogleProvider([
